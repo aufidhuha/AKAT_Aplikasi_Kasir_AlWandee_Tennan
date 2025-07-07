@@ -60,7 +60,7 @@ public class cetakStrukFrame extends javax.swing.JFrame {
             DecimalFormat formatAngka = new DecimalFormat("#,###", simbol);
 
             
-             String message = "==============================================\n\tWarung Kopi & PS Al-Wandee TENNAN\n\t       Jl. Mayjend D.I Panjaitan No. 90\n\t                 Kabupaten Nganjuk\n\t                      082331243098\n==============================================\n\t\t\t    " + waktu + "\n\n"
+             String message = "==============================================\n\tWarung Kopi & PS Al-Wandee TENNAN\n\t       Jl. Mayjend D.I Panjaitan No. 90\n\t                 Kabupaten Nganjuk\n\t                      082331243098\n==============================================\n\t\t           tanggal  :  " + waktu + "\n\n"
                   + "No Faktur\t      :     " + noFaktur + "\n\n"
                   + "ID Customer\t      :     "  + idCustomer + "\n\n"
                   + "Nama Customer     :     " + nama + "\n\n"
