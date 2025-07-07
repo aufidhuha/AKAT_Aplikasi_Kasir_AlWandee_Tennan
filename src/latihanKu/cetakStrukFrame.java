@@ -34,8 +34,7 @@ public class cetakStrukFrame extends javax.swing.JFrame {
         
     void print(){
         try {        
-            String sql = "SELECT transaksi.NoFaktur, transaksi.ID_Customers, customers.nama, transaksi.TotalBeli, "
-                    + "transaksi.tanggal FROM transaksi JOIN customers ON customers.ID_Customer = transaksi.ID_Customers ORDER BY transaksi.NoFaktur DESC LIMIT 1";
+            String sql = "SELECT transaksi.NoFaktur, transaksi.ID_Customers, customers.nama, transaksi.TotalBeli, transaksi.tanggal FROM transaksi JOIN customers ON customers.ID_Customer = transaksi.ID_Customers ORDER BY transaksi.NoFaktur DESC LIMIT 1";
             Connection cnVar = koneksi.getKoneksi();
             Statement stVar = cnVar.createStatement();
             ResultSet rsVar = stVar.executeQuery(sql);
