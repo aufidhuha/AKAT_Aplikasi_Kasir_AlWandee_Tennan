@@ -803,17 +803,18 @@ public class transaksiPanel extends javax.swing.JPanel {
             psVarCustomers.close();
             
             
-            String sqlTransaksi = "INSERT INTO transaksi (NoFaktur, ID_Customers, TotalBeli) VALUES (?, ?, ?)";
+            String sqlTransaksi = "INSERT INTO transaksi (NoFaktur, ID_Customers, TotalBeli, tanggal) VALUES (?, ?, ?, ?)";
             PreparedStatement psVarTransaski = cnVar.prepareStatement(sqlTransaksi);
             psVarTransaski.setString(1, noTransaksi);
             psVarTransaski.setString(2, idCustomer);
             psVarTransaski.setInt(3, nilaiTotal);
+            psVarTransaski.setString(4, tanggal);
             psVarTransaski.executeUpdate();
             psVarTransaski.close();
             
             
             int baris = tabelTransaksi.getRowCount();
-            String sqlDetailTransaksi = "INSERT INTO detail_transaksi (NoFa, ID_Produk, Nama_Produk, harga, jumlah, total, tanggal) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sqlDetailTransaksi = "INSERT INTO detail_transaksi (NoFa, ID_Produk, Nama_Produk, harga, jumlah, total) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement psVarDetailTransaksi = cnVar.prepareStatement(sqlDetailTransaksi);
             for (int i = 0; i < baris; i++) {
                 psVarDetailTransaksi.setString(1, noFaktur);
@@ -822,7 +823,6 @@ public class transaksiPanel extends javax.swing.JPanel {
                 psVarDetailTransaksi.setString(4, tabelTransaksi.getValueAt(i, 2).toString());
                 psVarDetailTransaksi.setString(5, tabelTransaksi.getValueAt(i, 3).toString());
                 psVarDetailTransaksi.setString(6, tabelTransaksi.getValueAt(i, 4).toString());
-                psVarDetailTransaksi.setString(7, tanggal);
                 psVarDetailTransaksi.executeUpdate();
             }
             psVarDetailTransaksi.close();            

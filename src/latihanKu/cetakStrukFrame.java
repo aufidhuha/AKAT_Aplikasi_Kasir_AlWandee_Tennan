@@ -31,18 +31,11 @@ public class cetakStrukFrame extends javax.swing.JFrame {
         print();
         setLocation(250, 100);
     }
-    
-    public void tampilStruk() {
-    // ini bagian error?
-    DecimalFormat format = new DecimalFormat("#,###"); // <== kasih tanda di sini
-}
-
+        
     void print(){
         try {        
-            String sql = "SELECT transaksi.NoFaktur, transaksi.ID_Customers, customers.nama, transaksi.TotalBeli,"
-                    + "detail_transaksi.tanggal FROM transaksi JOIN detail_transaksi ON "
-                    + "transaksi.NoFaktur = detail_transaksi.Nofa "
-                    + "JOIN customers ON customers.ID_Customer = transaksi.ID_CustomerS ORDER BY transaksi.NoFaktur DESC LIMIT 1";
+            String sql = "SELECT transaksi.NoFaktur, transaksi.ID_Customers, customers.nama, transaksi.TotalBeli, "
+                    + "transaksi.tanggal FROM transaksi JOIN customers ON customers.ID_Customer = transaksi.ID_Customers ORDER BY transaksi.NoFaktur DESC LIMIT 1";
             Connection cnVar = koneksi.getKoneksi();
             Statement stVar = cnVar.createStatement();
             ResultSet rsVar = stVar.executeQuery(sql);
