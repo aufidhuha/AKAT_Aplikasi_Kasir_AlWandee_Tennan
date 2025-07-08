@@ -68,12 +68,13 @@ public class dataPS extends javax.swing.JFrame {
         model.addColumn("Harga Sewa");
         
         String cari = txtCari.getText();
-        String sql = "SELECT * FROM ps WHERE nama LIKE ?";
+        String sql = "SELECT * FROM ps WHERE nama LIKE ? OR harga LIKE ?";
         
         try {
             Connection cnVar = koneksi.getKoneksi();
             PreparedStatement psVar = cnVar.prepareStatement(sql);
             psVar.setString(1, "%" + cari + "%");
+            psVar.setString(2, "%" + cari + "%");
             ResultSet rsVar = psVar.executeQuery();
             
             while (rsVar.next()) {                

@@ -68,12 +68,13 @@ public class dataMinuman extends javax.swing.JFrame {
         model.addColumn("Harga Satuan");
         
         String cari = txtCari.getText();
-        String sql = "SELECT * FROM makanminum WHERE kategori = 'Minuman' AND nama LIKE ?";
+        String sql = "SELECT * FROM makanminum WHERE kategori = 'Minuman' AND (nama LIKE ? OR harga LIKE ?)";
         
         try {
             Connection cnVar = koneksi.getKoneksi();
             PreparedStatement psVar = cnVar.prepareStatement(sql);
             psVar.setString(1, "%" + cari + "%");
+            psVar.setString(2, "%" + cari + "%");
             ResultSet rsVar = psVar.executeQuery();
             
             while (rsVar.next()) {                

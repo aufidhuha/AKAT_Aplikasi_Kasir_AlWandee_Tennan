@@ -410,10 +410,22 @@ public class makanminumPanel extends javax.swing.JPanel {
         String hargaProduk = txtHarga.getText();
         String kategori = cbKategori.getSelectedItem().toString();
         
-        try {
+        try {           
+
+        Connection cnVar = koneksi.getKoneksi();
+        String sqlCheck = "SELECT * FROM makanminum WHERE id = ?";
+        PreparedStatement psVarCheck =  cnVar.prepareStatement(sqlCheck);
+        psVarCheck.setString(1, idProduk);
+        ResultSet rsVarCheck = psVarCheck.executeQuery();
+        
+        if (rsVarCheck.next()) {
+            JOptionPane.showMessageDialog(null, "Warning!!, Data yang diinputkan sudah ada, harap mengisi data dengan ID lain", "Warning", JOptionPane.WARNING_MESSAGE);
+            reset();
+            return;
+            
+        } else {
             
             String sql = "INSERT INTO makanminum VALUES (?, ?, ?, ?)";
-            Connection cnVar = koneksi.getKoneksi();
             PreparedStatement psVar = cnVar.prepareStatement(sql);
             
             psVar.setString(1, idProduk);
@@ -424,9 +436,12 @@ public class makanminumPanel extends javax.swing.JPanel {
             
             JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
             
+            }  
+        
         } catch (SQLException sQLException) {
             JOptionPane.showMessageDialog(null, "Error, Data gagal disimpan " + sQLException.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
         reset();
         data_makan_minum();
     }//GEN-LAST:event_buttonSimpanActionPerformed
