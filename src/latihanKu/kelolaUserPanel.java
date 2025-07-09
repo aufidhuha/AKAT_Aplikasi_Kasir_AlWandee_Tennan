@@ -211,7 +211,7 @@ public class kelolaUserPanel extends javax.swing.JPanel {
                         this.getTopLevelAncestor().setVisible(false);
                         new loginFrame().setVisible(true);                    
                 } else {
-                    JOptionPane.showMessageDialog(null, "Gagal mengubah Username dan Password");
+                    JOptionPane.showMessageDialog(null, "Username lama salah, Username dan Password gagal diubah");
                 }
             }
             

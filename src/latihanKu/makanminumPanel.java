@@ -419,7 +419,7 @@ public class makanminumPanel extends javax.swing.JPanel {
         ResultSet rsVarCheck = psVarCheck.executeQuery();
         
         if (rsVarCheck.next()) {
-            JOptionPane.showMessageDialog(null, "Warning!!, Data yang diinputkan sudah ada, harap mengisi data dengan ID lain", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Warning! Data yang diinputkan sudah ada, harap mengisi data dengan ID lain", "Warning", JOptionPane.WARNING_MESSAGE);
             reset();
             return;
             
