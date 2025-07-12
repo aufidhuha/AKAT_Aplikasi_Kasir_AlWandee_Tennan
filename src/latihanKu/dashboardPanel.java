@@ -206,7 +206,7 @@ public class dashboardPanel extends javax.swing.JPanel {
 
         labelSelamatDatang.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         labelSelamatDatang.setForeground(new java.awt.Color(0, 0, 0));
-        labelSelamatDatang.setText("SELAMAT DATANG,");
+        labelSelamatDatang.setText("SELAMAT DATANG");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
