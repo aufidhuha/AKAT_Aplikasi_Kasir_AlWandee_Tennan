@@ -377,8 +377,8 @@ public class psPanel extends javax.swing.JPanel {
 
     private void buttonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditActionPerformed
         // TODO add your handling code here:
-        if (txtIDPS.getText().isBlank()) {
-            JOptionPane.showMessageDialog(null, "Harap memilih data yang ingin diubah", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        if (txtIDPS.getText().isBlank() || txtNamaPS.getText().isBlank() || cbKategori.getSelectedItem() == null || txtHarga.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Harap memilih data yang ingin diubah, atau silahkan isi data secara keseluruhan", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -402,7 +402,7 @@ public class psPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Data berhasil diubah");
             
         } catch (SQLException sQLException) {
-            JOptionPane.showMessageDialog(null, "Error, Data gagal diubah" + sQLException.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, Data gagal diubah : " + sQLException.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
         reset();
         data_ps();
