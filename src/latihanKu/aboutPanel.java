@@ -25,7 +25,9 @@ public class aboutPanel extends javax.swing.JPanel {
                 + "<pre style =\"font-family : 'Segoe UI;'\">"
                 + " Ahmad Saifuddin Azyuhdi\t:     (202457201008)\n"
                 + " Anna Cahya Ningrum\t:     (202457201013)\n"
+                + " Anti Maulidatul Husna\t:     (202457201014)\n"
                 + " Aufi Dhuha Mutaafif\t:     (202457201015)\n"
+                + " Giantluigi Azka Zain\t:     (202457201023)\n"
                 + "</pre>"
                 + "</body>"
                 + "</html>";
