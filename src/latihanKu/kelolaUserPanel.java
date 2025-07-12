@@ -47,12 +47,13 @@ public class kelolaUserPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtUsernameLama = new javax.swing.JTextField();
-        txtPasswordBaru = new javax.swing.JTextField();
         buttonBatal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtNamaPengguna = new javax.swing.JTextField();
         labelNB = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        cbxShowPassword = new javax.swing.JCheckBox();
+        txtPasswordBaru = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(189, 195, 199));
 
@@ -86,10 +87,6 @@ public class kelolaUserPanel extends javax.swing.JPanel {
         txtUsernameLama.setForeground(new java.awt.Color(0, 0, 0));
         txtUsernameLama.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
-        txtPasswordBaru.setBackground(new java.awt.Color(255, 255, 255));
-        txtPasswordBaru.setForeground(new java.awt.Color(0, 0, 0));
-        txtPasswordBaru.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
-
         buttonBatal.setBackground(new java.awt.Color(244, 67, 54));
         buttonBatal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         buttonBatal.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,6 +112,18 @@ public class kelolaUserPanel extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/latihanKu/images/WhatsApp Image 2025-05-17 at 14.08.31.jpg"))); // NOI18N
 
+        cbxShowPassword.setForeground(new java.awt.Color(0, 0, 0));
+        cbxShowPassword.setText("Show Password");
+        cbxShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxShowPasswordActionPerformed(evt);
+            }
+        });
+
+        txtPasswordBaru.setBackground(new java.awt.Color(255, 255, 255));
+        txtPasswordBaru.setForeground(new java.awt.Color(0, 0, 0));
+        txtPasswordBaru.setText("jPasswordField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,19 +138,19 @@ public class kelolaUserPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsernameLama, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNamaPengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUsernameLama, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtNamaPengguna, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtUsernameBaru, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtPasswordBaru, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUsernameBaru, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(jLabel3)
+                            .addComponent(cbxShowPassword)
+                            .addComponent(txtPasswordBaru))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addGap(216, 216, 216))))
@@ -156,25 +165,27 @@ public class kelolaUserPanel extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtUsernameLama, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
+                        .addGap(46, 46, 46)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(txtUsernameBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbxShowPassword)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtPasswordBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(txtNamaPengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(66, 66, 66)
+                            .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(45, 45, 45)
                 .addComponent(labelNB)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -228,9 +239,19 @@ public class kelolaUserPanel extends javax.swing.JPanel {
         reset();
     }//GEN-LAST:event_buttonBatalActionPerformed
 
+    private void cbxShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxShowPasswordActionPerformed
+        // TODO add your handling code here:
+        if (cbxShowPassword.isSelected()) {
+            txtPasswordBaru.setEchoChar((char) 0);
+        } else {
+            txtPasswordBaru.setEchoChar(('*'));
+        }
+    }//GEN-LAST:event_cbxShowPasswordActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBatal;
+    private javax.swing.JCheckBox cbxShowPassword;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -239,7 +260,7 @@ public class kelolaUserPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel labelNB;
     private javax.swing.JTextField txtNamaPengguna;
-    private javax.swing.JTextField txtPasswordBaru;
+    private javax.swing.JPasswordField txtPasswordBaru;
     private javax.swing.JTextField txtUsernameBaru;
     private javax.swing.JTextField txtUsernameLama;
     // End of variables declaration//GEN-END:variables

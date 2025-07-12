@@ -128,20 +128,6 @@ public class transaksiPanel extends javax.swing.JPanel {
         txtIDCustomers.setEditable(false);
     }
     
-    void totalBiaya(){
-        int jumlahBaris = tabelTransaksi.getRowCount();
-        int jumlahTotal = 0;
-        
-        int harga, jumlahBeli;
-        
-        for (int i = 0; i < jumlahBaris; i++) {
-           harga = Integer.parseInt(tabelTransaksi.getValueAt(i, 2).toString());
-           jumlahBeli = Integer.parseInt(tabelTransaksi.getValueAt(i, 3).toString());
-           jumlahTotal = jumlahTotal + (harga * jumlahBeli);
-        }
-        txtTotalBayar.setText("Rp. " + jumlahTotal);
-    }
-    
     void nonEditable(){
         txtIDProduk.setEditable(false);
         txtNamaProduk.setEditable(false);
@@ -168,6 +154,20 @@ public class transaksiPanel extends javax.swing.JPanel {
        txtBayar.setText("");
        txtKembalian.setText("Rp. 0");
        emptyTable();
+    }
+    
+    void totalBiaya(){
+        int jumlahBaris = tabelTransaksi.getRowCount();
+        int jumlahTotal = 0;
+        
+        int harga, jumlahBeli;
+        
+        for (int i = 0; i < jumlahBaris; i++) {
+           harga = Integer.parseInt(tabelTransaksi.getValueAt(i, 2).toString());
+           jumlahBeli = Integer.parseInt(tabelTransaksi.getValueAt(i, 3).toString());
+           jumlahTotal = jumlahTotal + (harga * jumlahBeli);
+        }
+        txtTotalBayar.setText("Rp. " + jumlahTotal);
     }
     
     void emptyTable(){

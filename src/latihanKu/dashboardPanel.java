@@ -58,8 +58,7 @@ public class dashboardPanel extends javax.swing.JPanel {
             labelPS.setText(String.valueOf(jumlahPS));           
             
         } catch (SQLException sQLException) {
-             sQLException.printStackTrace();
-             JOptionPane.showMessageDialog(null, sQLException.getMessage());
+             JOptionPane.showMessageDialog(null, "Error : " + sQLException.getMessage());
         }
         
     }

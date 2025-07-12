@@ -133,7 +133,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="checkShow" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxShowPassword" min="-2" max="-2" attributes="0"/>
                           <Component id="txtPassword" min="-2" pref="320" max="-2" attributes="0"/>
                           <Component id="txtUsername" min="-2" pref="320" max="-2" attributes="0"/>
                           <Component id="buttonLogin" alignment="0" min="-2" pref="320" max="-2" attributes="0"/>
@@ -154,7 +154,7 @@
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="checkShow" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbxShowPassword" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtPassword" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace pref="71" max="32767" attributes="0"/>
@@ -187,7 +187,7 @@
                 <Property name="text" type="java.lang.String" value="USERNAME"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="checkShow">
+            <Component class="javax.swing.JCheckBox" name="cbxShowPassword">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -203,7 +203,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkShowActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxShowPasswordActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonLogin">
